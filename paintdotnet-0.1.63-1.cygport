@@ -1,0 +1,14 @@
+DESCRIPTION="Port of Paint.NET to Mono"
+HOMEPAGE="http://code.google.com/p/paint-mono/"
+SRC_URI="http://paint-mono.googlecode.com/files/${P}.tar.gz"
+
+MAKEOPTS+=" -j1"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	./configure --prefix=/usr
+	cygmake
+}
+
+DOCS="readme.txt"
